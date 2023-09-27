@@ -24,13 +24,15 @@ const ProductList = () => {
   console.log("Re-Render: ", isLoading, products);
 
   const onSearch = (e) => {
-    let search = e.target.value.toLowerCase();
+    setTimeout(() => {
+      let search = e.target.value.toLowerCase();
 
-    const filterProducts = products.filter((elem) => {
-      return elem.title.toLowerCase().includes(search);
-    });
+      const filterProducts = products.filter((elem) => {
+        return elem.title.toLowerCase().includes(search);
+      });
 
-    setProducts(filterProducts);
+      setProducts(filterProducts);
+    }, 300);
   };
 
   return (
