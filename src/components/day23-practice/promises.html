@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const onWakeUp = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("wake up seccessfully");
+      }, 3000);
+    });
+  };
+
+  const onGettingItems = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("shopping done successfully.");
+      }, 2000);
+    });
+  };
+
+  const onCookingBrkFast = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("cooking is done.");
+      }, 2000);
+    });
+  };
+
+  const havingBrkFast = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("brk fast is done");
+      }, 5000);
+    });
+  };
+
+  onWakeUp()
+    .then((wakeupdata) => {
+      console.log("1.wake up data");
+
+      onGettingItems()
+        .then((items) => {
+          console.log("2.items buyed");
+
+          onCookingBrkFast()
+            .then((onCookingBrkFastData) => {
+              console.log("3. onCookingBrkFastData");
+
+              havingBrkFast()
+                .then((havingBrkFastData) => {
+                  console.log("4. having Brk Fast");
+                })
+                .catch((havingBrkFastErr) => {
+                  console.log("4.1 havingBrkFast err");
+                });
+            })
+            .catch((cookErr) => {
+              console.log("3.3 cook err");
+            });
+        })
+        .catch((itemErr) => {
+          console.log("2.2 item err");
+        });
+    })
+    .catch((wakeUpErr) => {
+      console.log("1.1 wake up err");
+    });
+</script>

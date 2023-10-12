@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const onWakeUp = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("wake up seccessfully");
+      }, 3000);
+    });
+  };
+
+  const onGettingItems = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("shopping done successfully.");
+      }, 2000);
+    });
+  };
+
+  const onCookingBrkFast = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("cooking is done.");
+      }, 2000);
+    });
+  };
+
+  const havingBrkFast = () => {
+    return new Promise((reply, reject) => {
+      setTimeout(() => {
+        reply("brk fast is done");
+      }, 5000);
+    });
+  };
+
+  const callAPI = async () => {
+    try {
+      const wakeUpData = await onWakeUp();
+      console.log("1. : ", wakeUpData);
+
+      const onGettingItemsData = await onGettingItems();
+      console.log("2. : ", onGettingItemsData);
+
+      const onCookingBrkFastData = await onCookingBrkFast();
+      console.log("3. : ", onCookingBrkFastData);
+
+      const havingBrkFastData = await havingBrkFast();
+      console.log("4. : ", havingBrkFastData);
+    } catch (error) {
+      console.log("erro");
+    }
+  };
+  callAPI();
+</script>
