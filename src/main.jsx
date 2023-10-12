@@ -9,6 +9,7 @@ import SearchExample from "./components/day13/useEffect-ex";
 import APIWithUseEffect from "./components/day13/apiWithUseEffect";
 import ProductList from "./components/day14/search-list";
 //import ProductListComponen from "./components/day14/3.searc-product";
+import DynamicForm from "./components/day21 -dynamic form/1.dynamic-form";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     <div style={{ display: "none" }}>
@@ -24,8 +25,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <MissigleLaunch></MissigleLaunch>
       <APIWithUseEffect></APIWithUseEffect>
       {/* <ProductList></ProductList> */}
+      <ProductList></ProductList>
     </div>
     {/* <ProductListComponen></ProductListComponen> */}
-    <ProductList></ProductList>
+
+    <DynamicForm></DynamicForm>
   </>
 );
