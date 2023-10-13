@@ -5,15 +5,32 @@
  * step 4 - if time exceeds then also show the products
  */
 
-const FlipcartSale = () => {
-  let currentTime = new Date();
-  let saleTime = new Date("October 12,2023 08:40:00");
+import { useEffect, useState } from "react";
 
-  const saleStart = saleTime - currentTime;
-  console.log({ saleStart });
+const FlipcartSale = () => {
+  const [saleTime, setSaleTime] = useState();
+  const [showProduct, setShowProduct] = useState(false);
+  useEffect(() => {
+    let currentTime = new Date();
+    const saleDate = new Date("October 13, 2023 00:43:00");
+    setSaleTime(saleDate - currentTime);
+    if (currentTime >= saleDate) {
+      setShowProduct(true);
+    }
+  }, []);
+
   return (
     <div>
-      <h1>Sale start at 09.00PM</h1>
+      {!showProduct ? (
+        <div>
+          <h1></h1>Sale is live in {saleTime}
+        </div>
+      ) : (
+        <div>
+          <h1>sale is live now</h1>
+          <h1>product list</h1>
+        </div>
+      )}
     </div>
   );
 };
