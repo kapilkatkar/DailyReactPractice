@@ -11,6 +11,7 @@ import ProductList from "./components/day14/search-list";
 //import ProductListComponen from "./components/day14/3.searc-product";
 import DynamicForm from "./components/day21 -dynamic form/1.dynamic-form";
 import FlipcartSale from "./components/day23 - flipcart-sale/1.flipcartSale";
+import APICallingWithAsyn from "./components/day24/2.apicall-with-async-await";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
     <div style={{ display: "none" }}>
@@ -32,5 +33,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <ProductListComponen></ProductListComponen> */}
 
     <FlipcartSale></FlipcartSale>
+
+    <APICallingWithAsyn></APICallingWithAsyn>
   </>
 );

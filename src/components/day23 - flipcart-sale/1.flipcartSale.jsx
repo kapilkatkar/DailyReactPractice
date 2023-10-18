@@ -12,7 +12,7 @@ const FlipcartSale = () => {
   const [showProduct, setShowProduct] = useState(false);
   useEffect(() => {
     let currentTime = new Date();
-    const saleDate = new Date("October 13, 2023 00:43:00");
+    const saleDate = new Date("October 13, 2023 09:37:00");
     setSaleTime(saleDate - currentTime);
     if (currentTime >= saleDate) {
       setShowProduct(true);
